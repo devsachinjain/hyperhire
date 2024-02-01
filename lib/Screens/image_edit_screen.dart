@@ -31,7 +31,7 @@ class _ImageEditScreenState extends State<ImageEditScreen> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.numberOfFaces! > 2) {
+    if ((widget.numberOfFaces??0) > 2) {
       Fluttertoast.showToast(
         msg: "More than 2 faces detected in the image!",
         toastLength: Toast.LENGTH_SHORT,
@@ -137,7 +137,7 @@ class _ImageEditScreenState extends State<ImageEditScreen> {
             ),
           ),
           const SizedBox(height: 10),
-          (widget.numberOfFaces! > 2)
+          ((widget.numberOfFaces??0) > 2)
               ? Container()
               : Padding(
                   padding: const EdgeInsets.symmetric(
@@ -200,7 +200,7 @@ class _ImageEditScreenState extends State<ImageEditScreen> {
                     ],
                   ),
                 ),
-          (widget.numberOfFaces! > 2)
+          ((widget.numberOfFaces??0) > 2)
               ? Container()
               : InkWell(
                   onTap: () async {
